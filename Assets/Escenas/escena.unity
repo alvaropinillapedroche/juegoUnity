@@ -3910,7 +3910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.05660379, g: 0.04832682, b: 0.04832682, a: 0.69411767}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4935,7 +4935,7 @@ GameObject:
   - component: {fileID: 682341124}
   - component: {fileID: 682341123}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasMarcador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6120,8 +6120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA1ENHORABUENA!\nHas llegado al final\n\npunt\n\nPulsa R para volver a
-    jugar"
+  m_Text: "\xA1ENHORABUENA!\nHas llegado al final\n\npunt"
 --- !u!222 &834701915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9804,7 +9803,7 @@ GameObject:
   - component: {fileID: 1300433503}
   - component: {fileID: 1300433502}
   m_Layer: 0
-  m_Name: pausaFin
+  m_Name: CanvasPausaFin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10051,10 +10050,7 @@ MonoBehaviour:
   m_Text: 'GAME OVER
 
 
-    punt
-
-
-    Pulsa R para volver a jugar'
+    punt'
 --- !u!222 &1326772619
 CanvasRenderer:
   m_ObjectHideFlags: 0
