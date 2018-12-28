@@ -16,6 +16,7 @@ public class Seguir : MonoBehaviour {
     public SpriteRenderer fondo;
     private AudioSource sonido;
     public AudioClip finNivel;
+    public Canvas pausa;
 
     void Start () {
         puntFinNivel = 2900;
@@ -54,6 +55,7 @@ public class Seguir : MonoBehaviour {
             textoFin.text = "GAME OVER\n\n"+marcador.text+"\n\nPulsa R para volver a jugar";
             textoFin.enabled = true;
             sonido.Play();
+            pausa.enabled = false;
         }
         else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura){ //fin partida, no hay más nivel
             estado = Estados.ended;
