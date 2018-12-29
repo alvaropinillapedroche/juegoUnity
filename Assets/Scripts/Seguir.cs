@@ -19,7 +19,8 @@ public class Seguir : MonoBehaviour {
     public Canvas pausa;
     public Canvas controlDerecha;
     public Canvas controlIzquierda;
-    //public Canvas botonesFin;
+    public Canvas disparo;
+    public Canvas botonesFin;
 
     void Start () {
         puntFinNivel = 2900;
@@ -41,9 +42,6 @@ public class Seguir : MonoBehaviour {
             fondo.sortingOrder = 0;
             textoPausa.enabled = false;
         }
-        else if (estado == Estados.ended && Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene("escena");
-        }
 
         if (doodler.position.y > maxAltura && estado == Estados.playing){
             maxAltura = doodler.position.y;
@@ -55,20 +53,27 @@ public class Seguir : MonoBehaviour {
             doodler.position = new Vector3(doodler.position.x, -7, 0);
             transform.position = new Vector3(0, -13, -10);
             marcador.enabled = false;
-            textoFin.text = "GAME OVER\n\n"+marcador.text+"\n\nPulsa R para volver a jugar";
+            textoFin.text = "GAME OVER\n\n"+marcador.text;
             textoFin.enabled = true;
             sonido.Play();
-            pausa.enabled = false;
-            controlDerecha.enabled = false;
-            controlIzquierda.enabled = false;
-            //botonesFin.enabled = true;
+            fin();
         }
         else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura){ //fin partida, no hay más nivel
             estado = Estados.ended;
             marcador.enabled = false;
-            textoFinNivel.text = "¡ENHORABUENA!\nHas llegado al final\n\n" + marcador.text + "\n\nPulsa R para volver a jugar";
+            textoFinNivel.text = "¡ENHORABUENA!\nHas llegado al final\n\n" + marcador.text;
             textoFinNivel.enabled = true;
             sonido.PlayOneShot(finNivel);
+            fin();
         }
+    }
+
+    private void fin()
+    {
+        pausa.enabled = false;
+        controlDerecha.enabled = false;
+        controlIzquierda.enabled = false;
+        disparo.enabled = false;
+        botonesFin.enabled = true;
     }
 }
