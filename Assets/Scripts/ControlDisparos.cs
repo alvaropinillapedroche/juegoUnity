@@ -25,4 +25,14 @@ public class ControlDisparos : MonoBehaviour {
             sonido.Play();
         }
     }
+
+    public void disparar()
+    {
+        if (Time.time > disparoSiguiente)
+        {
+            disparoSiguiente = Time.time + ratio;
+            Instantiate(disparo, disparos.position, disparos.rotation);
+            sonido.Play();
+        }
+    }
 }

@@ -17,7 +17,8 @@ public class Seguir : MonoBehaviour {
     private AudioSource sonido;
     public AudioClip finNivel;
     public Canvas pausa;
-    public Canvas controles;
+    public Canvas controlDerecha;
+    public Canvas controlIzquierda;
     //public Canvas botonesFin;
 
     void Start () {
@@ -58,7 +59,8 @@ public class Seguir : MonoBehaviour {
             textoFin.enabled = true;
             sonido.Play();
             pausa.enabled = false;
-            controles.enabled = false;
+            controlDerecha.enabled = false;
+            controlIzquierda.enabled = false;
             //botonesFin.enabled = true;
         }
         else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura){ //fin partida, no hay más nivel

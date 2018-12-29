@@ -66,4 +66,9 @@ public class Doodler : MonoBehaviour{
         segundos += Time.deltaTime;
     
     }
+
+    public void iniciarDisparar()
+    {
+        disparo = true;
+    }
 }
