@@ -21,6 +21,7 @@ public class Seguir : MonoBehaviour {
     public Canvas controlIzquierda;
     public Canvas disparo;
     public Canvas botonesFin;
+    public GameObject controlPausa;
 
     void Start () {
         puntFinNivel = 2900;
@@ -65,7 +66,7 @@ public class Seguir : MonoBehaviour {
             textoFinNivel.enabled = true;
             sonido.PlayOneShot(finNivel);
             fin();
-        }
+        }   
     }
 
     private void fin()
@@ -75,5 +76,6 @@ public class Seguir : MonoBehaviour {
         controlIzquierda.enabled = false;
         disparo.enabled = false;
         botonesFin.enabled = true;
+        controlPausa.SetActive(false);
     }
 }

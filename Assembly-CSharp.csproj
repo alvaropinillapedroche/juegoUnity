@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\botonesFinPartida.cs" />
     <Compile Include="Assets\Scripts\Coliders.cs" />
     <Compile Include="Assets\Scripts\ControlDisparos.cs" />
+    <Compile Include="Assets\Scripts\ControlVolverMenu.cs" />
     <Compile Include="Assets\Scripts\Disparo.cs" />
     <Compile Include="Assets\Scripts\Doodler.cs" />
     <Compile Include="Assets\Scripts\Enemigo.cs" />
