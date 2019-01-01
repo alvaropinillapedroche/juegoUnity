@@ -6,6 +6,7 @@ public class Muelle : MonoBehaviour{
 
     private bool usado;
     private Animator anim;
+
     void Start(){
         usado = false;
         anim = GetComponent<Animator>();
@@ -17,5 +18,10 @@ public class Muelle : MonoBehaviour{
     void OnCollisionEnter2D(Collision2D c){
         if (c.relativeVelocity.y <= 0)
             usado = true;
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
     }
 }

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ControlVolverMenu.cs" />
     <Compile Include="Assets\Scripts\Disparo.cs" />
     <Compile Include="Assets\Scripts\Doodler.cs" />
+    <Compile Include="Assets\Scripts\Eliminar.cs" />
     <Compile Include="Assets\Scripts\Enemigo.cs" />
     <Compile Include="Assets\Scripts\GeneracionAleatoria.cs" />
     <Compile Include="Assets\Scripts\movimientoFlechas.cs" />

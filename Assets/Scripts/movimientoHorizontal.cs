@@ -21,4 +21,9 @@ public class movimientoHorizontal : MonoBehaviour {
         else
             objetivo.position = posDrcha;
 	}
+
+    void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
 }
