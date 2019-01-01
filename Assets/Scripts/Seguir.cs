@@ -27,6 +27,7 @@ public class Seguir : MonoBehaviour {
     public Canvas canvasGuardarPuntuacion;
     public InputField fieldNombre;
     private int posicion;
+    private int puntuacion;
 
     void Start () {
         puntFinNivel = 2900;
@@ -62,6 +63,7 @@ public class Seguir : MonoBehaviour {
             textoFin.text = "GAME OVER\n\n"+marcador.text;
             textoFin.enabled = true;
             sonido.Play();
+            puntuacion = int.Parse(marcador.text);
             fin();
         }
         else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura){ //fin partida, no hay más nivel
@@ -70,6 +72,7 @@ public class Seguir : MonoBehaviour {
             textoFinNivel.text = "¡ENHORABUENA!\nHas llegado al final\n\n" + puntFinNivel;
             textoFinNivel.enabled = true;
             sonido.PlayOneShot(finNivel);
+            puntuacion = puntFinNivel;
             fin();
         }   
     }
@@ -92,7 +95,6 @@ public class Seguir : MonoBehaviour {
     {
         int[] puntuaciones = new int[10];
         Array.Copy(obtenerArrayPuntuaciones(), puntuaciones, 10);
-        int puntuacion = int.Parse(marcador.text);
 
         for (int i = 0; i < puntuaciones.Length; i++)
         {
@@ -146,7 +148,6 @@ public class Seguir : MonoBehaviour {
         }
         else{ //todo correcto
             nombre = nombre.Trim();
-            int puntuacion = int.Parse(marcador.text);
             string[] nombres = new string[10];
             Array.Copy(obtenerArrayNombres(), nombres, 10);
             int[] puntuaciones = new int[10];
