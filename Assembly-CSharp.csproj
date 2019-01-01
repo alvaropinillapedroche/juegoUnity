@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Muelle.cs" />
     <Compile Include="Assets\Scripts\PausaBoton.cs" />
     <Compile Include="Assets\Scripts\PlataformaRoja.cs" />
+    <Compile Include="Assets\Scripts\Puntuaciones.cs" />
     <Compile Include="Assets\Scripts\Seguir.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Documents/Dropbox/Ingenieria del Sotfware/Tercero/2º Semestre/(Optativa) Diseño y Programación de Videojuegos/Juego Doodle Jump Unity/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

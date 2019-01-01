@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escenas/escena.unity
     guid: c1ca72adaf1f87740a99833fa47cad5c
+  - enabled: 1
+    path: Assets/Escenas/Puntuaciones.unity
+    guid: c96dae9777b31cb479a5c0cf58f8ce78
   m_configObjects: {}
