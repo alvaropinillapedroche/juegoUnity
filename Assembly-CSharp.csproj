@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Disparo.cs" />
     <Compile Include="Assets\Scripts\Doodler.cs" />
     <Compile Include="Assets\Scripts\Enemigo.cs" />
+    <Compile Include="Assets\Scripts\GeneracionAleatoria.cs" />
     <Compile Include="Assets\Scripts\movimientoFlechas.cs" />
     <Compile Include="Assets\Scripts\movimientoHorizontal.cs" />
     <Compile Include="Assets\Scripts\Muelle.cs" />
