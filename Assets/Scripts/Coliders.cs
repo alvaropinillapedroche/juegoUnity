@@ -22,7 +22,7 @@ public class Coliders : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (c.gameObject.tag == "plataforma" && rb2d.velocity.y <= 0)
+        if ((c.gameObject.tag == "plataforma" || c.gameObject.tag == "obligatoria") && rb2d.velocity.y <= 0)
         {
             rb2d.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
             if (!GetComponent<Doodler>().disparo)

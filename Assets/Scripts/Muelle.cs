@@ -16,7 +16,7 @@ public class Muelle : MonoBehaviour{
     }
 
     void OnCollisionEnter2D(Collision2D c){
-        if (c.relativeVelocity.y <= 0)
+        if (c.gameObject.tag == "Player" && c.relativeVelocity.y <= 0)
             usado = true;
     }
 

@@ -11,6 +11,7 @@ TagManager:
   - plataformaBlanca
   - disparo
   - enemigo
+  - obligatoria
   layers:
   - Default
   - TransparentFX
