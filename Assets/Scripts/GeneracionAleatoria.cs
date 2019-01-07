@@ -30,22 +30,24 @@ public class GeneracionAleatoria : MonoBehaviour {
     private void generarSiguienteTramo()
     {
         generarPlataformasObligatorias();
-        for (int i = 0; i < 10; i++)
+        int num = Random.Range(2, 9); //Genero de 2 a 8 elementos
+        Debug.Log(num);
+        for (int i = 0; i < num; i++)
         {
-            generarObjetoAleatorio();
+            generarElementoAleatorio();
         }
         inicioTramo.position = new Vector3(0, inicioTramo.position.y + 11, 0);
     }
 
-    private void generarObjetoAleatorio()
+    private void generarElementoAleatorio()
     {
         int num = Random.Range(1, 101);
         Vector3 posAleatoria = new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(inicioTramo.position.y, inicioTramo.position.y + 10), 0);
-        if(num <=50)
+        if(num <= 40)
             Instantiate(plataformaVerde, posAleatoria, transform.rotation);
-        else if (num>= 51 && num <= 70)
+        else if (num>= 41 && num <= 60)
             Instantiate(plataformaAzul, posAleatoria, transform.rotation);
-        else if (num >= 71 && num <= 81)
+        else if (num >= 61 && num <= 71)
             Instantiate(plataformaBlanca, posAleatoria, transform.rotation);
         else
             Instantiate(plataformaRoja, posAleatoria, transform.rotation);

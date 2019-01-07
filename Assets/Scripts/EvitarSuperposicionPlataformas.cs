@@ -6,9 +6,9 @@ public class EvitarSuperposicionPlataformas : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("obligatoria") && !other.gameObject.CompareTag("obligatoriaBlanca")
-            && !other.gameObject.CompareTag("Player"))
-        {
+        if (!other.gameObject.CompareTag("obligatoria")
+            && !other.gameObject.CompareTag("obligatoriaBlanca")
+            && !other.gameObject.CompareTag("Player")){
             Destroy(other.gameObject, 2);
         }
     }

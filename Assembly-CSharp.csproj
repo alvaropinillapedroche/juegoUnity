@@ -78,8 +78,6 @@
     <Compile Include="Assets\Scripts\Muelle.cs" />
     <Compile Include="Assets\Scripts\PausaBoton.cs" />
     <Compile Include="Assets\Scripts\PlataformaRoja.cs" />
-    <Compile Include="Assets\Scripts\pruebas\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\pruebas\pruebaGeneracion.cs" />
     <Compile Include="Assets\Scripts\Puntuaciones.cs" />
     <Compile Include="Assets\Scripts\Seguir.cs" />
     <Reference Include="UnityEditor.StandardEvents">
