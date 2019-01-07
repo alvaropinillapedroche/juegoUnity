@@ -43,7 +43,7 @@ public class Coliders : MonoBehaviour
                 GetComponent<Doodler>().salto = true;
             sonido.PlayOneShot(camaAudio);
         }
-        else if (c.gameObject.tag == "plataformaBlanca" && rb2d.velocity.y <= 0)
+        else if ((c.gameObject.tag == "plataformaBlanca" || c.gameObject.tag == "obligatoriaBlanca") && rb2d.velocity.y <= 0)
         {
             rb2d.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
             if (!GetComponent<Doodler>().disparo)

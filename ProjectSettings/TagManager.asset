@@ -12,6 +12,7 @@ TagManager:
   - disparo
   - enemigo
   - obligatoria
+  - obligatoriaBlanca
   layers:
   - Default
   - TransparentFX
