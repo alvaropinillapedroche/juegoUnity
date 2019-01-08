@@ -9,13 +9,13 @@ public class EvitarSuperposicionPlataformas : MonoBehaviour {
         if (!other.gameObject.CompareTag("obligatoria")
             && !other.gameObject.CompareTag("obligatoriaBlanca")
             && !other.gameObject.CompareTag("Player")){
-            Destroy(other.gameObject, 2);
+            Destroy(other.gameObject);
         }
     }
 
-    /*private void OnBecameVisible()
+    void OnBecameVisible()
     {
         Destroy(this.GetComponent<Rigidbody2D>());
-    }*/
+    }
 
 }

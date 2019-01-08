@@ -26,11 +26,16 @@ public class Seguir : MonoBehaviour {
     public InputField fieldNombre;
     private int posicion;
     private int puntuacion;
+    private bool modoInfinito;
 
     void Start () {
-        //puntFinNivel = 2900;
+        puntFinNivel = 2900;
         maxAltura = 0;
         sonido = GetComponent<AudioSource>();
+        if (SceneManager.GetActiveScene().name == "modo infinito")
+            modoInfinito = true;
+        else
+            modoInfinito = false;
     }
 
 	void Update () {
@@ -49,14 +54,14 @@ public class Seguir : MonoBehaviour {
             puntuacion = int.Parse(marcador.text);
             fin();
         }
-        /*else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura){ //fin partida, no hay más nivel
+        else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura && !modoInfinito){ //fin partida, no hay más nivel
             marcador.enabled = false;
             textoFinNivel.text = "¡ENHORABUENA!\nHas llegado al final\n\n" + puntFinNivel;
             textoFinNivel.enabled = true;
             sonido.PlayOneShot(finNivel);
             puntuacion = puntFinNivel;
             fin();
-        }*/
+        }
     }
 
     private void fin()
@@ -76,7 +81,10 @@ public class Seguir : MonoBehaviour {
     private int posPuntuacionAlta()
     {
         int[] puntuaciones = new int[10];
-        Array.Copy(obtenerArrayPuntuaciones(), puntuaciones, 10);
+        if(modoInfinito)
+            Array.Copy(obtenerArrayPuntuaciones(true), puntuaciones, 10);
+        else
+            Array.Copy(obtenerArrayPuntuaciones(false), puntuaciones, 10);
 
         for (int i = 0; i < puntuaciones.Length; i++)
         {
@@ -98,9 +106,13 @@ public class Seguir : MonoBehaviour {
         botonesFin.enabled = true;
     }
 
-    private int[] obtenerArrayPuntuaciones()
+    private int[] obtenerArrayPuntuaciones(bool infinito)
     {
-        string punt = PlayerPrefs.GetString("puntuaciones", "0,0,0,0,0,0,0,0,0,0");
+        string punt;
+        if(infinito)
+            punt = PlayerPrefs.GetString("puntuaciones2", "0,0,0,0,0,0,0,0,0,0");
+        else
+            punt = PlayerPrefs.GetString("puntuaciones", "0,0,0,0,0,0,0,0,0,0");
         string[] puntuacionesString = punt.Split(',');
         int[] puntuaciones = new int[10];
         for (int i = 0; i < puntuaciones.Length; i++)
@@ -109,9 +121,13 @@ public class Seguir : MonoBehaviour {
         return puntuaciones;
     }
 
-    private string[] obtenerArrayNombres()
+    private string[] obtenerArrayNombres(bool infinito)
     {
-        string punt = PlayerPrefs.GetString("nombres", "x,x,x,x,x,x,x,x,x,x");
+        string punt;
+        if(infinito)
+            punt = PlayerPrefs.GetString("nombres2", "x,x,x,x,x,x,x,x,x,x");
+        else
+            punt = PlayerPrefs.GetString("nombres", "x,x,x,x,x,x,x,x,x,x");
         string[] nombres = punt.Split(',');
         return nombres;
     }
@@ -131,11 +147,19 @@ public class Seguir : MonoBehaviour {
         else{ //todo correcto
             nombre = nombre.Trim();
             string[] nombres = new string[10];
-            Array.Copy(obtenerArrayNombres(), nombres, 10);
             int[] puntuaciones = new int[10];
-            Array.Copy(obtenerArrayPuntuaciones(), puntuaciones, 10);
-
-            if(posicion == puntuaciones.Length - 1){
+            if (modoInfinito)
+            {
+                Array.Copy(obtenerArrayNombres(true), nombres, 10);
+                Array.Copy(obtenerArrayPuntuaciones(true), puntuaciones, 10);
+            }
+            else
+            {
+                Array.Copy(obtenerArrayNombres(false), nombres, 10);
+                Array.Copy(obtenerArrayPuntuaciones(false), puntuaciones, 10);
+            }
+                
+            if (posicion == puntuaciones.Length - 1){
                 puntuaciones[posicion] = puntuacion;
                 nombres[posicion] = nombre;
             }
@@ -146,9 +170,21 @@ public class Seguir : MonoBehaviour {
                 nombres[posicion] = nombre;
             }
 
-            PlayerPrefs.SetString("puntuaciones", crearStringPuntuaciones(puntuaciones));
-            PlayerPrefs.SetString("nombres", crearStringNombres(nombres));
-            PlayerPrefs.SetInt("marcarPosicion", posicion);
+            if (modoInfinito)
+            {
+                PlayerPrefs.SetString("infinito", "true");
+                PlayerPrefs.SetString("puntuaciones2", crearStringPuntuaciones(puntuaciones));
+                PlayerPrefs.SetString("nombres2", crearStringNombres(nombres));
+                PlayerPrefs.SetInt("marcarPosicion2", posicion);
+            }
+            else
+            {
+                PlayerPrefs.SetString("infinito", "false");
+                PlayerPrefs.SetString("puntuaciones", crearStringPuntuaciones(puntuaciones));
+                PlayerPrefs.SetString("nombres", crearStringNombres(nombres));
+                PlayerPrefs.SetInt("marcarPosicion", posicion);
+            }
+            
             SceneManager.LoadScene("Puntuaciones");
         }
     }

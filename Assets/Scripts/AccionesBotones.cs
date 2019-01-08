@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class AccionesBotones : MonoBehaviour {
 
-    public void jugar()
+    public void modoFinito()
     {
         SceneManager.LoadScene("escena");
+    }
+
+    public void modoInfinito()
+    {
+        SceneManager.LoadScene("modo infinito");
     }
 
     public void puntuaciones()

@@ -7,7 +7,10 @@ public class botonesFinPartida : MonoBehaviour {
 
 	public void reintentar()
     {
-        SceneManager.LoadScene("escena");
+        if(SceneManager.GetActiveScene().name == "escena")
+            SceneManager.LoadScene("escena");
+        else
+            SceneManager.LoadScene("modo infinito");
     }
 
     public void irMenu()

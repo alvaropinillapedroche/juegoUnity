@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escenas/Puntuaciones.unity
     guid: c96dae9777b31cb479a5c0cf58f8ce78
+  - enabled: 1
+    path: Assets/Escenas/modo infinito.unity
+    guid: 95ee7a558dc16c845a2ccfe00eea6386
   m_configObjects: {}

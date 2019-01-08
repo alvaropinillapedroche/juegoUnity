@@ -43,14 +43,28 @@ public class GeneracionAleatoria : MonoBehaviour {
     {
         int num = Random.Range(1, 101);
         Vector3 posAleatoria = new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(inicioTramo.position.y, inicioTramo.position.y + 10), 0);
-        if(num <= 40)
+        if(num <= 45)
             Instantiate(plataformaVerde, posAleatoria, transform.rotation);
-        else if (num>= 41 && num <= 60)
+        else if (num>= 46 && num <= 55)
             Instantiate(plataformaAzul, posAleatoria, transform.rotation);
-        else if (num >= 61 && num <= 71)
-            Instantiate(plataformaBlanca, posAleatoria, transform.rotation);
-        else
+        else if (num >= 56 && num <= 65)
             Instantiate(plataformaRoja, posAleatoria, transform.rotation);
+        else if (num >= 66 && num <= 71)
+            Instantiate(plataformaBlanca, posAleatoria, transform.rotation);
+        else if (num >= 72 && num <= 81)
+            Instantiate(muellePlataformaVerde, posAleatoria, transform.rotation);
+        else if (num >= 82 && num <= 86)
+            Instantiate(muellePlataformaAzul, posAleatoria, transform.rotation);
+        else if (num >= 87 && num <= 90)
+            Instantiate(camaPlataformaVerde, posAleatoria, transform.rotation);
+        else if (num >= 91 && num <= 94)
+            Instantiate(camaPlataformaAzul, posAleatoria, transform.rotation);
+        else if (num >= 95 && num <= 97)
+            Instantiate(enemigoRojo, posAleatoria, transform.rotation);
+        else if (num >= 98 && num <= 99)
+            Instantiate(enemigoAzul, posAleatoria, transform.rotation);
+        else
+            Instantiate(enemigoVerde, posAleatoria, transform.rotation);
     }
 
     private void generarPlataformasObligatorias()
