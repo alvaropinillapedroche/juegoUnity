@@ -16,14 +16,17 @@ public class GeneracionAleatoria : MonoBehaviour {
     public GameObject enemigoAzul;
     public GameObject enemigoVerde;
     public Transform inicioTramo;
+    public Transform inicioTramo2;
     public GameObject[] plataformasObligatorias;
+    public GameObject[] plataformasObligatorias2;
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine(generarSiguienteTramo());
-            transform.position = new Vector3(0, transform.position.y + 11, 0);
+            StartCoroutine(generarSiguienteTramo2());
+            transform.position = new Vector3(0, transform.position.y + 22, 0);
         }
     }
 
@@ -33,14 +36,30 @@ public class GeneracionAleatoria : MonoBehaviour {
         int num = Random.Range(0, 9); //Genero de 0 a 8 elementos
         GameObject elemento;
         Debug.Log(num);
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < num; i++)
         {
-            elemento = generarElementoAleatorio();
-            yield return new WaitForSeconds(0.1f);
+            elemento = generarElementoAleatorio(true);
+            yield return new WaitForSeconds(0.10f);
             if (elemento != null)
                 elemento.tag = cambiarTag(elemento.tag);
         }
-        inicioTramo.position = new Vector3(0, inicioTramo.position.y + 11, 0);
+        inicioTramo.position = new Vector3(0, inicioTramo.position.y + 22, 0);
+    }
+
+    private IEnumerator generarSiguienteTramo2()
+    {
+        generarPlataformasObligatorias2();
+        int num = Random.Range(0, 11); //Genero de 0 a 10 elementos
+        GameObject elemento;
+        Debug.Log(num);
+        for (int i = 0; i < num; i++)
+        {
+            elemento = generarElementoAleatorio(false);
+            yield return new WaitForSeconds(0.15f);
+            if (elemento != null)
+                elemento.tag = cambiarTag(elemento.tag);
+        }
+        inicioTramo2.position = new Vector3(0, inicioTramo2.position.y + 22, 0);
     }
 
     private string cambiarTag(string tag)
@@ -59,11 +78,16 @@ public class GeneracionAleatoria : MonoBehaviour {
         return newTag;
     }
 
-    private GameObject generarElementoAleatorio()
+    private GameObject generarElementoAleatorio(bool tramo1)
     {
         int num = Random.Range(1, 101);
-        Vector3 posAleatoria = new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(inicioTramo.position.y, inicioTramo.position.y + 10), 0);
+        Vector3 posAleatoria;
+        if (tramo1)
+            posAleatoria = new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(inicioTramo.position.y, inicioTramo.position.y + 10), 0);
+        else
+            posAleatoria = new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(inicioTramo2.position.y, inicioTramo2.position.y + 10), 0);
         GameObject elemento;
+
         if(num <= 45)
             elemento = Instantiate(plataformaVerde, posAleatoria, transform.rotation);
         else if (num>= 46 && num <= 55)
@@ -97,6 +121,22 @@ public class GeneracionAleatoria : MonoBehaviour {
         {
             int num = Random.Range(1, 11);
             Vector3 posAleatoria = new Vector3 (Random.Range(-4.5f, 4.5f), plataformasObligatorias[i].transform.position.y, 0);
+            if (num <= 7) // 70%
+                Instantiate(plataformaVerde, posAleatoria, transform.rotation).tag = "obligatoria";
+            else if (num > 7 && num < 10) // 20%
+                Instantiate(plataformaAzul, posAleatoria, transform.rotation).tag = "obligatoria";
+            else // 10%
+                Instantiate(plataformaBlanca, posAleatoria, transform.rotation).tag = "obligatoriaBlanca";
+        }
+    }
+
+    private void generarPlataformasObligatorias2()
+    {
+
+        for (int i = 0; i < plataformasObligatorias2.Length; i++)
+        {
+            int num = Random.Range(1, 11);
+            Vector3 posAleatoria = new Vector3(Random.Range(-4.5f, 4.5f), plataformasObligatorias2[i].transform.position.y, 0);
             if (num <= 7) // 70%
                 Instantiate(plataformaVerde, posAleatoria, transform.rotation).tag = "obligatoria";
             else if (num > 7 && num < 10) // 20%
