@@ -33,7 +33,7 @@ public class GeneracionAleatoria : MonoBehaviour {
     private IEnumerator generarSiguienteTramo()
     {
         generarPlataformasObligatorias();
-        int num = Random.Range(2, 9); //Genero de 2 a 8 elementos
+        int num = Random.Range(4, 9); //Genero de 4 a 8 elementos
         GameObject elemento;
         for (int i = 0; i < num; i++)
         {
@@ -48,7 +48,7 @@ public class GeneracionAleatoria : MonoBehaviour {
     private IEnumerator generarSiguienteTramo2()
     {
         generarPlataformasObligatorias2();
-        int num = Random.Range(2, 11); //Genero de 2 a 10 elementos
+        int num = Random.Range(4, 11); //Genero de 4 a 10 elementos
         GameObject elemento;
         for (int i = 0; i < num; i++)
         {
@@ -91,25 +91,25 @@ public class GeneracionAleatoria : MonoBehaviour {
         else
         {
             int num = Random.Range(1, 101);
-            if (num <= 45)
+            if (num <= 44)
                 elemento = Instantiate(plataformaVerde, posAleatoria, transform.rotation);
-            else if (num >= 46 && num <= 55)
+            else if (num >= 45 && num <= 54)
                 elemento = Instantiate(plataformaAzul, posAleatoria, transform.rotation);
-            else if (num >= 56 && num <= 65)
+            else if (num >= 55 && num <= 62)
                 elemento = Instantiate(plataformaRoja, posAleatoria, transform.rotation);
-            else if (num >= 66 && num <= 71)
+            else if (num >= 63 && num <= 68)
                 elemento = Instantiate(plataformaBlanca, posAleatoria, transform.rotation);
-            else if (num >= 72 && num <= 81)
+            else if (num >= 69 && num <= 78)
                 elemento = Instantiate(muellePlataformaVerde, posAleatoria, transform.rotation);
-            else if (num >= 82 && num <= 86)
+            else if (num >= 79 && num <= 83)
                 elemento = Instantiate(muellePlataformaAzul, posAleatoria, transform.rotation);
-            else if (num >= 87 && num <= 90)
+            else if (num >= 84 && num <= 87)
                 elemento = Instantiate(camaPlataformaVerde, posAleatoria, transform.rotation);
-            else if (num >= 91 && num <= 94)
+            else if (num >= 88 && num <= 91)
                 elemento = Instantiate(camaPlataformaAzul, posAleatoria, transform.rotation);
-            else if (num >= 95 && num <= 97)
+            else if (num >= 92 && num <= 94)
                 elemento = Instantiate(enemigoRojo, posAleatoria, transform.rotation);
-            else if (num >= 98 && num <= 99)
+            else if (num >= 95 && num <= 97)
                 elemento = Instantiate(enemigoAzul, posAleatoria, transform.rotation);
             else
                 elemento = Instantiate(enemigoVerde, posAleatoria, transform.rotation);
