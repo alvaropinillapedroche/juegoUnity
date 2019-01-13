@@ -12,7 +12,7 @@ public class Disparo : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("enemigo"))
+        if (collision.gameObject.CompareTag("enemigo") || collision.gameObject.CompareTag("obligatorioEnemigo"))
         {
             Destroy(this.gameObject);
         }

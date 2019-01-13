@@ -20,13 +20,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4803451102140294}
   - component: {fileID: 212009920240406580}
+  - component: {fileID: 61497090696243528}
   - component: {fileID: 61409942841240048}
   - component: {fileID: 114681098973013600}
   - component: {fileID: 114494573810696886}
   - component: {fileID: 82805154051865146}
   - component: {fileID: 114723877943853830}
   - component: {fileID: 50018668087727124}
-  - component: {fileID: 61497090696243528}
   m_Layer: 0
   m_Name: EnemigoVerde
   m_TagString: enemigo

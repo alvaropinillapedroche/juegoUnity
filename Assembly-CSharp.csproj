@@ -71,7 +71,7 @@
     <Compile Include="Assets\Scripts\Doodler.cs" />
     <Compile Include="Assets\Scripts\Eliminar.cs" />
     <Compile Include="Assets\Scripts\Enemigo.cs" />
-    <Compile Include="Assets\Scripts\EvitarSuperposicionPlataformas.cs" />
+    <Compile Include="Assets\Scripts\EvitarSuperposicion.cs" />
     <Compile Include="Assets\Scripts\GeneracionAleatoria.cs" />
     <Compile Include="Assets\Scripts\GeneracionInicial.cs" />
     <Compile Include="Assets\Scripts\movimientoFlechas.cs" />

@@ -20,13 +20,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4320129384989514}
   - component: {fileID: 212772269405813076}
+  - component: {fileID: 61270568126034692}
   - component: {fileID: 61503114279693908}
   - component: {fileID: 114945901048132416}
   - component: {fileID: 114003293786232856}
   - component: {fileID: 82684267651216700}
   - component: {fileID: 50747549448558766}
   - component: {fileID: 114856446159363300}
-  - component: {fileID: 61270568126034692}
   m_Layer: 0
   m_Name: EnemigoRojo
   m_TagString: enemigo

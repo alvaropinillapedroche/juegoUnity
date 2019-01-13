@@ -20,13 +20,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4515004031833350}
   - component: {fileID: 212617762142809938}
+  - component: {fileID: 61989779271752750}
   - component: {fileID: 61306428932691694}
   - component: {fileID: 114641074214761246}
   - component: {fileID: 114339141500950476}
   - component: {fileID: 82149215671217766}
   - component: {fileID: 114381275183925676}
   - component: {fileID: 50357178440785710}
-  - component: {fileID: 61989779271752750}
   m_Layer: 0
   m_Name: EnemigoAzul
   m_TagString: enemigo

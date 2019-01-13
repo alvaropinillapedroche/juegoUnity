@@ -52,4 +52,12 @@ public class Coliders : MonoBehaviour
             Destroy(c.gameObject);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("enemigo") || other.gameObject.CompareTag("obligatorioEnemigo"))
+        {
+            transform.position = new Vector3(transform.position.x, -6, 0);
+        }
+    }
 }

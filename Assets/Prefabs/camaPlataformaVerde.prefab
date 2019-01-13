@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212206595629054554}
   - component: {fileID: 251639650561761080}
   - component: {fileID: 61860429775142202}
-  - component: {fileID: 61011505923654038}
   - component: {fileID: 61036673402833682}
+  - component: {fileID: 61011505923654038}
   - component: {fileID: 114176547041414370}
   - component: {fileID: 114927191501761434}
   - component: {fileID: 50242665918207376}
@@ -161,7 +161,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -172,7 +172,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1090909, y: 0.43636364}
+  m_Size: {x: 1.1090909, y: 0.25}
   m_EdgeRadius: 0
 --- !u!61 &61860429775142202
 BoxCollider2D:

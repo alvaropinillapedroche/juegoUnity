@@ -27,11 +27,13 @@ public class Seguir : MonoBehaviour {
     private int posicion;
     private int puntuacion;
     private bool modoInfinito;
+    private bool final;
 
     void Start () {
         puntFinNivel = 2900;
         maxAltura = 0;
         sonido = GetComponent<AudioSource>();
+        final = false;
         if (SceneManager.GetActiveScene().name == "modo infinito")
             modoInfinito = true;
         else
@@ -39,7 +41,7 @@ public class Seguir : MonoBehaviour {
     }
 
 	void Update () {
-        if (doodler.position.y > maxAltura){
+        if (doodler.position.y > maxAltura && !final){
             maxAltura = doodler.position.y;
             transform.position = new Vector3(0, maxAltura, -10f);
             marcador.text = Mathf.Floor(maxAltura * 10).ToString();
@@ -54,7 +56,9 @@ public class Seguir : MonoBehaviour {
             puntuacion = int.Parse(marcador.text);
             fin();
         }
-        else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura && !modoInfinito){ //fin partida, no hay más nivel
+        else if (int.Parse(marcador.text) >= puntFinNivel && doodler.position.y <= maxAltura
+                 && !final && !modoInfinito){ //fin partida, no hay más nivel
+            final = true;
             marcador.enabled = false;
             textoFinNivel.text = "¡ENHORABUENA!\nHas llegado al final\n\n" + puntFinNivel;
             textoFinNivel.enabled = true;

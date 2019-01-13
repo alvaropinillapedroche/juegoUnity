@@ -13,6 +13,9 @@ TagManager:
   - enemigo
   - obligatoria
   - obligatoriaBlanca
+  - obligatorioEnemigo
+  - plataformaRoja
+  - obligatoriaRoja
   layers:
   - Default
   - TransparentFX
