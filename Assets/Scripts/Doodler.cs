@@ -7,7 +7,7 @@ public class Doodler : MonoBehaviour{
     public bool disparo;
 
     private Rigidbody2D rb2d;
-    private SpriteRenderer render;
+    //private SpriteRenderer render;
     private Animator anim;
 
     private float segundos;
@@ -18,7 +18,7 @@ public class Doodler : MonoBehaviour{
         salto = false;
 
         rb2d = GetComponent<Rigidbody2D>();
-        render = GetComponent<SpriteRenderer>();
+        //render = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
 
@@ -28,13 +28,19 @@ public class Doodler : MonoBehaviour{
     }
 
     void FixedUpdate(){
-        float h = Input.GetAxis("Horizontal");
+        /*float h = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * h * velocidad * Time.deltaTime);
 
         if (h < 0)
+        {
             render.flipX = true;
+            GetComponent<PlatformEffector2D>().rotationalOffset = 270;
+        }
         else if (h > 0)
+        {
             render.flipX = false;
+            GetComponent<PlatformEffector2D>().rotationalOffset = 90;
+        }*/
 
         //Animación y gravedad al caer
         if (rb2d.velocity.y <= 0)

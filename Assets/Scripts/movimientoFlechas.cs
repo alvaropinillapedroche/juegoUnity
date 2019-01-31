@@ -7,6 +7,7 @@ public class movimientoFlechas : MonoBehaviour {
 
     public GameObject doodler;
 
+    private PlatformEffector2D effector;
     private SpriteRenderer render;
     private float velocidad;
     private bool derecha;
@@ -17,6 +18,7 @@ public class movimientoFlechas : MonoBehaviour {
         derecha = false;
         izquierda = false;
         render = doodler.GetComponent<SpriteRenderer>();
+        effector = doodler.GetComponent<PlatformEffector2D>();
     }
 	
 	void FixedUpdate () {
@@ -29,6 +31,7 @@ public class movimientoFlechas : MonoBehaviour {
     public void irDerecha()
     {
         derecha = true;
+        effector.rotationalOffset = 90;
         render.flipX = false;
     }
 
@@ -40,6 +43,7 @@ public class movimientoFlechas : MonoBehaviour {
     public void irIzquierda()
     {
         izquierda = true;
+        effector.rotationalOffset = 270;
         render.flipX = true;
     }
 
